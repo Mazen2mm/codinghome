@@ -768,3 +768,75 @@ header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.9);
 }
 header { position: relative; z-index: 10000 !important; }
+/* =========================================
+   MASTER MOBILE & LAYOUT FIXES (الكود الشامل للموبايل)
+   ========================================= */
+
+/* --- 1. إصلاح القائمة الجانبية (Mobile Nav) --- */
+.mobile-nav {
+    display: none; /* مخفية في الوضع الافتراضي */
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background-color: #0B1120;
+    z-index: 9999 !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+    border-bottom: 2px solid #00E676;
+}
+
+/* الكلاس ده الجافاسكريبت بيضيفه عشان يظهر القائمة */
+.mobile-nav.active {
+    display: block !important;
+    animation: slideDown 0.3s ease-out;
+}
+
+header {
+    position: relative;
+    z-index: 10000 !important; /* الهيدر دايما فوق أي حاجة في الموقع */
+}
+
+/* --- 2. تظبيط شاشة الموبايل بالكامل --- */
+@media (max-width: 768px) {
+    /* منع الشاشة من التحرك يمين وشمال */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    /* إظهار زرار الموبايل وإخفاء قائمة الكمبيوتر */
+    .desktop-nav { display: none !important; }
+    .mobile-menu-btn { display: block !important; margin-right: 15px; }
+
+    /* تصغير اللوجو والمسافات */
+    .logo-img { height: 60px !important; margin-left: 10px; }
+    .header-container { padding: 10px 0 !important; }
+
+    /* تصغير الخطوط عشان متخرجش برا الشاشة */
+    .hero h1 { font-size: 2.2rem !important; line-height: 1.2 !important; }
+    .hero p { font-size: 1rem !important; padding: 0 15px !important; }
+    .section-title { font-size: 1.8rem !important; margin-bottom: 30px !important; }
+    .badge { font-size: 0.85rem !important; padding: 5px 15px !important; }
+
+    /* رص الكروت تحت بعضها بدل ما تزنق الشاشة */
+    .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+    }
+    .card { min-width: 100% !important; max-width: 100% !important; }
+    .card-inner { padding: 30px 20px !important; }
+
+    /* تقليل المسافات الفارغة */
+    .hero { padding: 60px 0 30px 0 !important; min-height: auto !important; }
+    .features, .contact-section, .faq-list { padding: 40px 0 !important; }
+
+    /* تظبيطات خاصة بصفحة الـ FAQ والتواصل */
+    .faq-question { font-size: 1.05rem !important; padding: 20px 15px !important; }
+    .faq-answer { padding: 0 15px !important; }
+    .faq-item.active .faq-answer { padding: 0 15px 20px 15px !important; }
+    .contact-section { flex-direction: column !important; }
+    .contact-info, .contact-form-container { width: 100% !important; }
+    .info-card { padding: 20px !important; flex-direction: column !important; text-align: center; }
+}
