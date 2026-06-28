@@ -768,3 +768,30 @@ header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.9);
 }
 header { position: relative; z-index: 10000 !important; }
+<script>
+    // دالة فتح وقفل القائمة للموبايل (بتشتغل على أي شاشة)
+    function toggleMobileMenu() {
+        const nav = document.getElementById("mobile-nav");
+        if (nav.classList.contains("active")) {
+            nav.classList.remove("active");
+            nav.style.display = "none"; // إخفاء إجباري
+        } else {
+            nav.classList.add("active");
+            nav.style.display = "block"; // إظهار إجباري
+        }
+    }
+
+    // باقي الأكواد بتاعتك (زي الأنيميشن والـ 3D) سيبها زي ما هي هنا
+    document.addEventListener("DOMContentLoaded", () => {
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, rootMargin: '0px', threshold: 0.15 });
+        revealElements.forEach(el => revealObserver.observe(el));
+    });
+</script>
