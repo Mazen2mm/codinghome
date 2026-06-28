@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions & Pricing | Coding Home Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Premium Dark Theme Variables --- */
+        :root {
+            --bg-dark: #0B1120; 
+            --bg-card: rgba(30, 41, 59, 0.7); 
+            --primary-navy: #1B365D;
+            --primary-green: #00E676; 
+            --gradient-green: linear-gradient(135deg, #00E676, #00B259);
+            --text-main: #94A3B8; 
+            --text-heading: #FFFFFF; 
+            --white: #FFFFFF;
+        }
+
+        /* --- Global Resets & Typography --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3 {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- Animated Background Orbs --- */
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 0;
+            animation: floatOrb 15s infinite alternate ease-in-out;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 230, 118, 0.15);
+            top: -100px;
+            left: -100px;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(27, 54, 93, 0.4);
+            bottom: 10%;
+            right: -50px;
+            animation-delay: -5s;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(100px, 50px) scale(1.2); }
+            100% { transform: translate(-50px, 150px) scale(0.9); }
+        }
+
+        /* --- Navigation --- */
+        header {
+            background: rgba(11, 17, 32, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.4s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-img {
+            height: 100px;
+            object-fit: contain;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+        }
+
+        .logo-img:hover {
+            transform: scale(1.08) rotate(-2deg);
+        }
+
+        .desktop-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .desktop-nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .desktop-nav a:hover, .desktop-nav a.active {
+            color: var(--primary-green);
+            text-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
+        }
+
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: var(--primary-green);
+            transition: width 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .desktop-nav a:hover::after, .desktop-nav a.active::after {
+            width: 100%;
+            left: 0;
+            background: var(--primary-green);
+            box-shadow: 0 0 10px var(--primary-green);
+        }
+
+        /* --- Mobile Menu --- */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 32px;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            background-color: var(--bg-dark);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-green);
+        }
+
+        .mobile-nav.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-nav ul { list-style: none; }
+        .mobile-nav a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 100px 0 50px 0;
+            text-align: center;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--primary-green);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 230, 118, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            font-weight: 900;
+        }
+
+        .highlight-green {
+            color: var(--primary-green);
+            text-shadow: 0 0 30px rgba(0, 230, 118, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: var(--text-main);
+        }
+
+        .animate-element {
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .slide-up {
+            animation-name: slideUpAnim;
+            animation-duration: 1s;
+            animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUpAnim {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Primary Buttons --- */
+        .btn-primary {
+            display: inline-block;
+            background: var(--gradient-green);
+            color: #000;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+            animation: buttonPulse 2s infinite;
+        }
+
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(0, 230, 118, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.02);
+            background: #00FF88;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+            background: rgba(0, 230, 118, 0.05);
+        }
+
+        /* --- Pricing Grid & Cards --- */
+        .features {
+            padding: 40px 0 100px 0;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: transparent;
+            flex: 1;
+            min-width: 320px;
+            max-width: 450px;
+        }
+
+        .card-inner {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.1s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover .card-inner {
+            border-color: rgba(0, 230, 118, 0.5);
+            box-shadow: 0 0 30px rgba(0, 230, 118, 0.15);
+        }
+
+        /* Pro Card Highlighting */
+        .card-pro .card-inner {
+            border-color: rgba(0, 230, 118, 0.4);
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.1);
+            position: relative;
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-green);
+            color: #000;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- Admissions Specifics --- */
+        .price-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .price-tag {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            margin: 15px 0;
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+        }
+
+        .price-tag span {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            font-weight: 400;
+            text-shadow: none;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            color: #cbd5e1;
+        }
+
+        .feature-list li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .feature-list li.disabled {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .feature-list li.disabled::before {
+            content: '✖';
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Process Steps */
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px auto;
+        }
+
+        /* --- Scroll Reveal Logic --- */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            background: rgba(0,0,0,0.2);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 2.8rem; }
+            .logo-img { height: 80px; } 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header id="navbar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Logo.jpg" alt="{CODING HOME} Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="curriculum.html">Curriculum</a></li>
+                    <li><a href="directors.html">Directors</a></li>
+                    <li><a href="admissions.html" class="active">Admissions</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="directors.html">Directors</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="animate-element slide-up" style="animation-delay: 0.1s;">
+                    <div class="badge">Invest In Your Future</div>
+                </div>
+                <h1 class="animate-element slide-up" style="animation-delay: 0.3s;">
+                    Admissions & <span class="highlight-green">Pricing</span>
+                </h1>
+                <p class="animate-element slide-up" style="animation-delay: 0.5s;">
+                    Transparent pricing. No hidden fees. Choose the learning style that fits your goals and start coding today.
+                </p>
+            </div>
+        </section>
+
+        <section class="features container scroll-reveal">
+            <div class="grid">
+                
+                <div class="card tilt-card">
+                    <div class="card-inner">
+                        <h3 class="price-title">Self-Paced</h3>
+                        <p style="font-size: 0.95rem;">For disciplined learners who want to go at their own speed.</p>
+                        <div class="price-tag">$99<span> /mo</span></div>
+                        
+                        <ul class="feature-list">
+                            <li>Access to all recorded video lectures</li>
+                            <li>Automated code grading & quizzes</li>
+                            <li>Access to the community Discord</li>
+                            <li class="disabled">Live 1-on-1 Mentorship</li>
+                            <li class="disabled">Career & Portfolio Coaching</li>
+                        </ul>
+                        
+                        <a href="#" class="btn-secondary">Start Free Trial</a>
+                    </div>
+                </div>
+
+                <div class="card tilt-card card-pro" style="transition-delay: 0.1s;">
+                    <div class="card-inner">
+                        <div class="popular-tag">Most Popular</div>
+                        <h3 class="price-title">Intensive Bootcamp</h3>
+                        <p style="font-size: 0.95rem;">The full, immersive experience designed to get you hired.</p>
+                        <div class="price-tag">$1,499</div>
+                        
+                        <ul class="feature-list">
+                            <li>Everything in Self-Paced</li>
+                            <li>Live instructor-led classes (Zoom)</li>
+                            <li>Weekly 1-on-1 code reviews with Directors</li>
+                            <li>Advanced Capstone Project building</li>
+                            <li>Resume, Portfolio & Interview Prep</li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn-primary glow-effect">Apply for Next Cohort</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container scroll-reveal" style="padding: 0 0 100px 0;">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 50px; font-size: 2.2rem;">How to Apply (Bootcamp)</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+                
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 style="margin-bottom: 10px;">Submit Application</h3>
+                    <p style="font-size: 0.9rem;">Fill out our short form telling us about your background and goals.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 style="margin-bottom: 10px;">Fit Interview</h3>
+                    <p style="font-size: 0.9rem;">A quick 15-minute chat with our directors to ensure the bootcamp is right for you.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 style="margin-bottom: 10px;">Secure Your Spot</h3>
+                    <p style="font-size: 0.9rem;">Choose your payment plan, get your pre-work materials, and prepare for Day 1!</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Coding Home Academy. All rights reserved.</p>
+            <p>Code the web. Shape the future.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // 1. Mobile Menu Logic
+            const mobileBtn = document.getElementById("mobile-menu-btn");
+            const mobileNav = document.getElementById("mobile-nav");
+
+            if (mobileBtn && mobileNav) {
+                mobileBtn.addEventListener("click", () => {
+                    mobileNav.classList.toggle("active");
+                });
+            }
+
+            // 2. Scroll Reveal Logic
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 3. 3D Tilt Hover Effect for Cards
+            const cards = document.querySelectorAll('.tilt-card');
+
+            cards.forEach(card => {
+                const inner = card.querySelector('.card-inner');
+
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left; 
+                    const y = e.clientY - rect.top;
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = ((y - centerY) / centerY) * -10; 
+                    const rotateY = ((x - centerX) / centerX) * 10;
+
+                    inner.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    inner.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                    inner.style.transition = 'transform 0.5s ease'; 
+                });
+
+                card.addEventListener('mouseenter', () => {
+                    inner.style.transition = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

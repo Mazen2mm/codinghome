@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Coding Home Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header id="navbar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Logo.jpg" alt="{CODING HOME} Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="curriculum.html">Curriculum</a></li>
+                    <li><a href="directors.html">Directors</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="hero" style="min-height: 50vh; padding: 100px 0 50px 0;">
+            <div class="container hero-content">
+                <div class="animate-element slide-up" style="animation-delay: 0.1s;">
+                    <div class="badge">Who We Are</div>
+                </div>
+                <h1 class="animate-element slide-up" style="animation-delay: 0.3s;">
+                    About <span class="highlight-green">{CODING HOME}</span>
+                </h1>
+                <p class="animate-element slide-up" style="animation-delay: 0.5s;">
+                    Empowering the next generation of top-tier software engineers through modern, immersive education.
+                </p>
+            </div>
+        </section>
+
+        <section class="features container scroll-reveal" style="padding: 40px 0;">
+            <div class="card tilt-card">
+                <div class="card-inner" style="padding: 60px 40px;">
+                    <h2 class="section-title" style="margin-bottom: 30px;">Our Mission</h2>
+                    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                        We believe that coding is the ultimate tool for problem-solving in the modern world. Our mission is to provide accessible, high-quality, and highly practical programming education. We don't just teach you how to write syntax; we teach you <span class="highlight-green" style="font-weight: 700;">how to think like an engineer</span>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features container scroll-reveal" style="padding: 60px 0;">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                <div class="card tilt-card">
+                    <div class="card-inner" style="padding: 40px 20px;">
+                        <div class="stat-number glow-text">2,500+</div>
+                        <div class="stat-label">Students Taught</div>
+                    </div>
+                </div>
+                <div class="card tilt-card" style="transition-delay: 0.1s;">
+                    <div class="card-inner" style="padding: 40px 20px;">
+                        <div class="stat-number glow-text">94%</div>
+                        <div class="stat-label">Hiring Rate</div>
+                    </div>
+                </div>
+                <div class="card tilt-card" style="transition-delay: 0.2s;">
+                    <div class="card-inner" style="padding: 40px 20px;">
+                        <div class="stat-number glow-text">15+</div>
+                        <div class="stat-label">Expert Mentors</div>
+                    </div>
+                </div>
+                <div class="card tilt-card" style="transition-delay: 0.3s;">
+                    <div class="card-inner" style="padding: 40px 20px;">
+                        <div class="stat-number glow-text">24/7</div>
+                        <div class="stat-label">Discord Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features container scroll-reveal" style="padding: 60px 0 100px 0;">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Project-Based Learning</h3>
+                    <p>Forget boring lectures. From day one, you will be building real-world applications that you can proudly showcase in your portfolio.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Industry-Ready Curriculum</h3>
+                    <p>Our courses are constantly updated to match the demands of top tech companies. You learn exactly what employers are looking for right now.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Mentorship & Support</h3>
+                    <p>You are never alone. Get your code reviewed by senior developers, participate in live Q&A sessions, and join a thriving student community.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Coding Home Academy. All rights reserved.</p>
+            <p>Code the web. Shape the future.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
