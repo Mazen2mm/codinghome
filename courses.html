@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses | Coding Home Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header id="navbar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Logo.jpg" alt="{CODING HOME} Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="curriculum.html">Curriculum</a></li>
+                    <li><a href="directors.html">Directors</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="hero courses-hero">
+            <div class="container hero-content">
+                <div class="animate-element slide-up delay-1">
+                    <div class="badge">Accelerate Your Career</div>
+                </div>
+                <h1 class="animate-element slide-up delay-3">
+                    Our <span class="highlight-green">Programs</span>
+                </h1>
+                <p class="animate-element slide-up delay-5">
+                    From absolute beginner to full-stack engineer. Choose your path and start building today.
+                </p>
+            </div>
+        </section>
+
+        <section class="features container scroll-reveal courses-features">
+            <div class="grid course-grid">
+                
+                <div class="card tilt-card">
+                    <div class="card-inner course-card-inner">
+                        <div class="course-meta">
+                            <span class="course-badge beginner">Beginner</span>
+                            <span class="course-duration">⏱ 4 Weeks</span>
+                        </div>
+                        <div class="card-icon floating-icon">🎨</div>
+                        <h3>Web Fundamentals</h3>
+                        <p>Learn the structural and visual building blocks of the web. Perfect for complete beginners.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span><span>CSS3</span><span>Figma</span>
+                        </div>
+                        <a href="curriculum.html" class="btn-secondary">View Syllabus</a>
+                    </div>
+                </div>
+
+                <div class="card tilt-card card-delay-1">
+                    <div class="card-inner course-card-inner">
+                        <div class="course-meta">
+                            <span class="course-badge intermediate">Intermediate</span>
+                            <span class="course-duration">⏱ 8 Weeks</span>
+                        </div>
+                        <div class="card-icon floating-icon icon-delay-1">⚡</div>
+                        <h3>JavaScript Deep Dive</h3>
+                        <p>Master the logic of the web. DOM manipulation, async JavaScript, API integration, and algorithms.</p>
+                        <div class="tech-stack">
+                            <span>ES6+</span><span>APIs</span><span>Logic</span>
+                        </div>
+                        <a href="curriculum.html" class="btn-secondary">View Syllabus</a>
+                    </div>
+                </div>
+
+                <div class="card tilt-card card-delay-2">
+                    <div class="card-inner course-card-inner">
+                        <div class="course-meta">
+                            <span class="course-badge advanced">Advanced</span>
+                            <span class="course-duration">⏱ 6 Weeks</span>
+                        </div>
+                        <div class="card-icon floating-icon icon-delay-2">⚛️</div>
+                        <h3>React.js Front-End</h3>
+                        <p>Build modern, single-page applications using the industry's most popular UI library.</p>
+                        <div class="tech-stack">
+                            <span>React</span><span>Redux</span><span>Tailwind</span>
+                        </div>
+                        <a href="curriculum.html" class="btn-secondary">View Syllabus</a>
+                    </div>
+                </div>
+
+                <div class="card tilt-card card-delay-3">
+                    <div class="card-inner course-card-inner">
+                        <div class="course-meta">
+                            <span class="course-badge intermediate">Intermediate</span>
+                            <span class="course-duration">⏱ 6 Weeks</span>
+                        </div>
+                        <div class="card-icon floating-icon icon-delay-3">⚙️</div>
+                        <h3>Node.js Back-End</h3>
+                        <p>Create secure, scalable servers and RESTful APIs using JavaScript outside the browser.</p>
+                        <div class="tech-stack">
+                            <span>Node.js</span><span>Express</span><span>MongoDB</span>
+                        </div>
+                        <a href="curriculum.html" class="btn-secondary">View Syllabus</a>
+                    </div>
+                </div>
+
+                <div class="card tilt-card course-featured card-delay-4">
+                    <div class="card-inner course-card-inner featured-layout">
+                        
+                        <div class="featured-content">
+                            <div class="course-meta meta-start">
+                                <span class="course-badge bootcamp">Intensive Bootcamp</span>
+                                <span class="course-duration">⏱ 24 Weeks</span>
+                            </div>
+                            <h3 class="featured-title">Full-Stack Engineering</h3>
+                            <p class="featured-desc">The ultimate career changer. Combine front-end beauty with back-end power to become a highly paid, versatile developer. Includes career coaching and interview prep.</p>
+                            <div class="tech-stack tech-stack-start">
+                                <span>MERN Stack</span><span>Git/GitHub</span><span>Deployment</span>
+                            </div>
+                        </div>
+                        
+                        <div class="featured-actions">
+                            <a href="admissions.html" class="btn-primary glow-effect btn-block">Enroll Now</a>
+                            <a href="curriculum.html" class="btn-secondary btn-block">Download Syllabus</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Coding Home Academy. All rights reserved.</p>
+            <p>Code the web. Shape the future.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
