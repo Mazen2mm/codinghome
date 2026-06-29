@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum | Coding Home Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header id="navbar">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Logo.jpg" alt="{CODING HOME} Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="curriculum.html" class="active">Curriculum</a></li>
+                    <li><a href="directors.html">Directors</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="curriculum.html" class="active">Curriculum</a></li>
+            <li><a href="directors.html">Directors</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="hero curriculum-hero">
+            <div class="container hero-content">
+                <div class="animate-element slide-up delay-1">
+                    <div class="badge">The Roadmap</div>
+                </div>
+                <h1 class="animate-element slide-up delay-3">
+                    Full-Stack <span class="highlight-green">Curriculum</span>
+                </h1>
+                <p class="animate-element slide-up delay-5">
+                    A step-by-step breakdown of your 24-week journey from absolute beginner to hired professional.
+                </p>
+            </div>
+        </section>
+
+        <section class="container timeline-section">
+            <div class="timeline">
+                
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card tilt-card">
+                        <div class="card-inner timeline-card-inner">
+                            <div class="course-meta timeline-meta">
+                                <span class="course-badge beginner">Phase 1</span>
+                                <span class="course-duration">Weeks 1 - 4</span>
+                            </div>
+                            <h3 class="timeline-title">Web Fundamentals & UI</h3>
+                            <p>We start from scratch. You will learn how the internet works and build your first responsive websites from the ground up.</p>
+                            <ul class="curriculum-list">
+                                <li>HTML5 Semantic Tags & Accessibility</li>
+                                <li>CSS3 Flexbox, Grid, & Animations</li>
+                                <li>Responsive Web Design (Mobile-First)</li>
+                                <li>Git, GitHub, and Terminal Basics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card tilt-card">
+                        <div class="card-inner timeline-card-inner">
+                            <div class="course-meta timeline-meta">
+                                <span class="course-badge intermediate">Phase 2</span>
+                                <span class="course-duration">Weeks 5 - 10</span>
+                            </div>
+                            <h3 class="timeline-title">JavaScript Mastery</h3>
+                            <p>This is where things get interactive. You will learn the core programming language of the web and start writing actual logic.</p>
+                            <ul class="curriculum-list">
+                                <li>Variables, Loops, Functions & Objects</li>
+                                <li>DOM Manipulation & Event Listeners</li>
+                                <li>ES6+ Modern Syntax</li>
+                                <li>Asynchronous JS (Promises, Async/Await) & Fetching APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card tilt-card">
+                        <div class="card-inner timeline-card-inner">
+                            <div class="course-meta timeline-meta">
+                                <span class="course-badge advanced">Phase 3</span>
+                                <span class="course-duration">Weeks 11 - 16</span>
+                            </div>
+                            <h3 class="timeline-title">Front-End Frameworks (React)</h3>
+                            <p>Transition from vanilla JavaScript to React, the industry standard for building massive, dynamic user interfaces.</p>
+                            <ul class="curriculum-list">
+                                <li>React Fundamentals & JSX</li>
+                                <li>Components, Props, and State</li>
+                                <li>React Hooks (useState, useEffect)</li>
+                                <li>Routing & Global State Management (Redux/Context API)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card tilt-card">
+                        <div class="card-inner timeline-card-inner">
+                            <div class="course-meta timeline-meta">
+                                <span class="course-badge advanced">Phase 4</span>
+                                <span class="course-duration">Weeks 17 - 21</span>
+                            </div>
+                            <h3 class="timeline-title">Back-End & Databases</h3>
+                            <p>Learn to write server-side code, manage databases, and build your own secure RESTful APIs.</p>
+                            <ul class="curriculum-list">
+                                <li>Node.js & Express.js Servers</li>
+                                <li>RESTful API Architecture</li>
+                                <li>MongoDB & Mongoose (NoSQL Databases)</li>
+                                <li>User Authentication (JWT, bcrypt)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-dot glow-dot"></div>
+                    <div class="timeline-content card tilt-card">
+                        <div class="card-inner timeline-card-inner glow-card">
+                            <div class="course-meta timeline-meta">
+                                <span class="course-badge bootcamp">Phase 5</span>
+                                <span class="course-duration">Weeks 22 - 24</span>
+                            </div>
+                            <h3 class="timeline-title">Final Project & Career Prep</h3>
+                            <p>Build a massive, production-ready Full-Stack application from scratch and prepare for technical interviews.</p>
+                            <ul class="curriculum-list">
+                                <li>Capstone Project Development</li>
+                                <li>Deployment (Vercel, Render, AWS)</li>
+                                <li>Resume & Portfolio Polish</li>
+                                <li>Mock Technical Interviews & Algorithm Practice</li>
+                            </ul>
+                            <a href="admissions.html" class="btn-primary glow-effect timeline-btn">Start Your Journey</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Coding Home Academy. All rights reserved.</p>
+            <p>Code the web. Shape the future.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
